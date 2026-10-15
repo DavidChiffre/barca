@@ -294,3 +294,27 @@ main {
   height: 100%; background: var(--primary);
   width: 0; transition: width 0.2s;
 }
+
+/* Editable fields */
+.editable {
+  cursor: text;
+  border-bottom: 1px dashed var(--dim);
+  transition: border-color 0.15s, background 0.15s;
+  border-radius: 4px;
+  padding: 1px 2px;
+  min-width: 40px;
+  display: inline-block;
+}
+.editable:hover, .editable:focus { border-color: var(--primary); background: rgba(78, 205, 196, 0.08); }
+.editable.edited { border-color: var(--primary-dim); }
+.editable.editing { border-bottom: none; padding: 0; background: none; }
+.edit-input {
+  width: 100%; background: var(--raised); color: var(--text);
+  border: 1px solid var(--primary); border-radius: 6px;
+  padding: 6px 8px; font: inherit; font-size: inherit;
+  outline: none;
+}
+textarea.edit-input { min-height: 60px; line-height: 1.5; }
+h2 .editable, .now-title.editable { display: block; border-bottom-style: dashed; }
+.now-notes.editable { display: block; }
+.detail-notes.editable { display: block; }

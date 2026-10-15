@@ -1,6 +1,7 @@
 import { getSteps, getDays, getPlace, getTrip } from './data.js';
 import { t, localized, getLang } from './i18n.js';
 import { stepDepart, stepArrive, stepStatus, fmtTime, fmtDate, duration } from './time.js';
+import { editableField, edited } from './edits.js';
 
 const MODE = { plane: '✈️', coach: '🚌', train: '🚂', walk: '🚶', hotel: '🏨', mountain: '⛰️', shop: '🛒' };
 
@@ -21,11 +22,12 @@ function render(el) {
       const from = getPlace(step.from), to = getPlace(step.to);
       const dur = duration(dep, arr);
       const timeStr = dep ? fmtTime(dep, step.departTz || tz) : arr ? fmtTime(arr, step.arriveTz || tz) : '';
+      const title = edited(step.title, `step.${step.id}.title`, lang);
       html += `
         <button class="tl-step ${st}" data-id="${step.id}">
           <span class="tl-mode">${MODE[step.mode] || ''}</span>
           <div class="tl-body">
-            <div class="tl-title">${localized(step.title)}</div>
+            <div class="tl-title">${title}</div>
             <div class="tl-meta">
               ${timeStr ? `<span>${timeStr}${step.approximate ? ' ~' : ''}</span>` : ''}
               ${from && to && from.id !== to.id ? `<span>${localized(from.name)} → ${localized(to.name)}</span>` : from ? `<span>${localized(from.name)}</span>` : ''}
@@ -47,30 +49,55 @@ function render(el) {
 function showDetail(id) {
   const steps = getSteps(), step = steps.find(s => s.id === id);
   if (!step) return;
-  const tz = getTrip().defaultTimezone;
+  const tz = getTrip().defaultTimezone, lang = getLang();
   const from = getPlace(step.from), to = getPlace(step.to);
   const dep = stepDepart(step, tz), arr = stepArrive(step, tz);
   const dur = duration(dep, arr);
   const overlay = document.getElementById('detail-overlay');
+  const sid = step.id;
 
   overlay.innerHTML = `
     <div class="detail-sheet">
       <button class="detail-close">✕</button>
       <div class="detail-mode">${MODE[step.mode] || ''}</div>
-      <h2>${localized(step.title)}</h2>
+      <h2 data-editable="step.${sid}.title"></h2>
       ${dep ? `<div class="detail-row"><strong>Depart</strong> ${fmtTime(dep, step.departTz || tz)}${step.approximate ? ' ~' : ''}</div>` : ''}
       ${arr ? `<div class="detail-row"><strong>Arrive</strong> ${fmtTime(arr, step.arriveTz || tz)}${step.approximate ? ' ~' : ''}</div>` : ''}
       ${dur ? `<div class="detail-row"><strong>Duration</strong> ${dur}</div>` : ''}
-      ${from ? `<div class="detail-row"><strong>From</strong> ${localized(from.name)}</div>` : ''}
-      ${to ? `<div class="detail-row"><strong>To</strong> ${localized(to.name)}</div>` : ''}
-      ${step.notes ? `<div class="detail-notes">${localized(step.notes)}</div>` : ''}
-      ${step.planB ? `<div class="detail-planb"><strong>⚠️ ${t('now.planB')}</strong><p>${localized(step.planB)}</p></div>` : ''}
+      ${from ? `<div class="detail-row"><strong>From</strong> <span data-editable="place.${step.from}.name"></span></div>` : ''}
+      ${to ? `<div class="detail-row"><strong>To</strong> <span data-editable="place.${step.to}.name"></span></div>` : ''}
+      ${step.notes ? `<div class="detail-notes" data-editable="step.${sid}.notes"></div>` : ''}
+      ${step.planB ? `<div class="detail-planb"><strong>⚠️ ${t('now.planB')}</strong><p data-editable="step.${sid}.planB"></p></div>` : ''}
       <div class="detail-actions">
         ${step.ticket ? `<button class="btn" data-action="ticket" data-id="${step.ticket}">🎫 ${t('now.openTicket')}</button>` : ''}
         ${step.bookingUrl ? `<a href="${step.bookingUrl}" target="_blank" rel="noopener" class="btn">${t('now.bookThis')}</a>` : ''}
         ${from ? `<button class="btn" data-action="map" data-place="${step.from}">📍 ${t('now.showOnMap')}</button>` : ''}
       </div>
     </div>`;
+
+  const sheet = overlay.querySelector('.detail-sheet');
+  sheet.querySelectorAll('[data-editable]').forEach(placeholder => {
+    const path = placeholder.dataset.editable;
+    let original = '', multiline = false;
+    if (path.startsWith('step.')) {
+      const field = path.split('.')[2];
+      if (field === 'title') original = localized(step.title);
+      else if (field === 'notes') { original = localized(step.notes); multiline = true; }
+      else if (field === 'planB') { original = localized(step.planB); multiline = true; }
+    } else if (path.startsWith('place.')) {
+      const parts = path.split('.');
+      const placeId = parts[1], field = parts[2];
+      const place = getPlace(placeId);
+      if (field === 'name') original = localized(place?.name);
+      else if (field === 'note') original = localized(place?.note);
+    }
+    const edField = editableField(path, original, {
+      tag: placeholder.tagName.toLowerCase(),
+      cls: placeholder.className,
+      multiline
+    });
+    placeholder.replaceWith(edField);
+  });
 
   overlay.classList.remove('hidden');
   overlay.querySelector('.detail-close').addEventListener('click', () => overlay.classList.add('hidden'));

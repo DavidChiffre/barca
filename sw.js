@@ -1,4 +1,4 @@
-const CACHE = 'barca-v1';
+const CACHE = 'barca-v2';
 const TILES = 'barca-tiles-v1';
 const SHELL = [
   './',
@@ -12,11 +12,14 @@ const SHELL = [
   './js/timeline.js',
   './js/map.js',
   './js/wallet.js',
+  './js/edits.js',
   './i18n/en.json',
   './i18n/ro.json',
   './data/trip.json',
   './manifest.json',
   './icons/icon.svg',
+  './icons/icon-192.png',
+  './icons/icon-512.png',
   'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js',
   'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css'
 ];
