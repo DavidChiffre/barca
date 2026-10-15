@@ -1,0 +1,50 @@
+{
+  "tabs": { "now": "Now", "timeline": "Timeline", "map": "Map", "wallet": "Wallet" },
+  "now": {
+    "next": "Next",
+    "inProgress": "In progress",
+    "departed": "Departed",
+    "planB": "Plan B",
+    "showOnMap": "Show on map",
+    "openTicket": "Open ticket",
+    "nextTravel": "Next travel day",
+    "bookThis": "Book this"
+  },
+  "time": {
+    "in": "in {time}",
+    "ago": "{time} ago",
+    "now": "now"
+  },
+  "timeline": {
+    "notes": "Notes",
+    "booking": "Book"
+  },
+  "map": {
+    "directions": "Directions",
+    "downloadTiles": "Download map for offline",
+    "downloading": "Downloading...",
+    "downloaded": "Map saved for offline",
+    "you": "You are here"
+  },
+  "wallet": {
+    "add": "Add ticket",
+    "empty": "No tickets added yet. Tap + to import a PDF or photo.",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "brighten": "Brighten",
+    "delete": "Remove",
+    "forStep": "For: {step}"
+  },
+  "menu": {
+    "phrases": "Useful phrases",
+    "emergency": "Emergency info",
+    "language": "Limba romana"
+  },
+  "phrases": { "title": "Useful phrases" },
+  "emergency": {
+    "title": "Emergency",
+    "call": "Call 112",
+    "accommodation": "Accommodation",
+    "contacts": "Contacts"
+  }
+}

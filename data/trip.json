@@ -1,0 +1,319 @@
+{
+  "trip": "Barca",
+  "version": "2026-10-15",
+  "defaultTimezone": "Europe/Rome",
+  "days": [
+    { "date": "2026-12-09", "label": { "en": "Fly in", "ro": "Zborul" }, "journey": "A" },
+    { "date": "2026-12-10", "label": { "en": "Train to Les Houches", "ro": "Trenul spre Les Houches" }, "journey": "A" },
+    { "date": "2026-12-11", "label": { "en": "Les Houches", "ro": "Les Houches" }, "rest": true },
+    { "date": "2026-12-12", "label": { "en": "Les Houches", "ro": "Les Houches" }, "rest": true },
+    { "date": "2026-12-13", "label": { "en": "Les Houches", "ro": "Les Houches" }, "rest": true },
+    { "date": "2026-12-14", "label": { "en": "Return", "ro": "Intoarcerea" }, "journey": "C" }
+  ],
+  "places": [
+    {
+      "id": "tsr",
+      "name": { "en": "Timisoara Airport", "ro": "Aeroportul Timisoara" },
+      "lat": 45.8098, "lng": 21.3378,
+      "note": { "en": "Two hours before departure", "ro": "Cu doua ore inainte" }
+    },
+    {
+      "id": "bgy",
+      "name": { "en": "Bergamo Airport", "ro": "Aeroportul Bergamo" },
+      "lat": 45.6690, "lng": 9.7004,
+      "note": { "en": "Coach bays outside arrivals", "ro": "Statiile de autocar in fata sosirilor" }
+    },
+    {
+      "id": "milano-piazza",
+      "name": { "en": "Milano Centrale, Piazza Luigi di Savoia", "ro": "Milano Centrale, Piazza Luigi di Savoia" },
+      "lat": 45.4855, "lng": 9.2055,
+      "note": { "en": "East side of the station — coach stop", "ro": "Partea estica a garii — statia de autocar" }
+    },
+    {
+      "id": "milan-hotel",
+      "name": { "en": "Milan hotel", "ro": "Hotelul din Milano" },
+      "lat": 45.4850, "lng": 9.2040,
+      "note": { "en": "TODO: update when booked", "ro": "De actualizat" }
+    },
+    {
+      "id": "milano-centrale",
+      "name": { "en": "Milano Centrale", "ro": "Milano Centrale" },
+      "lat": 45.4861, "lng": 9.2044,
+      "note": { "en": "Main concourse — check the departure board", "ro": "Holul principal — verifica panoul de plecari" }
+    },
+    {
+      "id": "brig",
+      "name": { "en": "Brig station", "ro": "Gara Brig" },
+      "lat": 46.3194, "lng": 7.9875,
+      "note": { "en": "Change to Swiss InterRegio", "ro": "Schimbare la InterRegio elvetian" }
+    },
+    {
+      "id": "martigny",
+      "name": { "en": "Martigny station", "ro": "Gara Martigny" },
+      "lat": 46.1012, "lng": 7.0737,
+      "note": { "en": "Mont-Blanc Express — own bay platform, same station", "ro": "Mont-Blanc Express — peron separat, aceeasi gara" }
+    },
+    {
+      "id": "vallorcine",
+      "name": { "en": "Vallorcine station", "ro": "Gara Vallorcine" },
+      "lat": 46.0344, "lng": 6.9329,
+      "note": { "en": "Change to French train — usually across the platform", "ro": "Schimbare la trenul francez — de obicei pe peronul opus" }
+    },
+    {
+      "id": "les-houches-gare",
+      "name": { "en": "Les Houches station", "ro": "Gara Les Houches" },
+      "lat": 45.8906, "lng": 6.7982
+    },
+    {
+      "id": "les-houches-stay",
+      "name": { "en": "Accommodation, Les Houches", "ro": "Cazare, Les Houches" },
+      "lat": 45.891, "lng": 6.799,
+      "note": { "en": "TODO: update when booked", "ro": "De actualizat" }
+    },
+    {
+      "id": "carrefour",
+      "name": { "en": "Carrefour, Les Houches", "ro": "Carrefour, Les Houches" },
+      "lat": 45.8925, "lng": 6.7960
+    },
+    {
+      "id": "chamonix-gare",
+      "name": { "en": "Chamonix station", "ro": "Gara Chamonix" },
+      "lat": 45.9237, "lng": 6.8694
+    },
+    {
+      "id": "montenvers",
+      "name": { "en": "Montenvers — Mer de Glace", "ro": "Montenvers — Mer de Glace" },
+      "lat": 45.9310, "lng": 6.9130,
+      "note": { "en": "Rack railway to the glacier", "ro": "Cale ferata cu cremaliera spre ghetar" }
+    },
+    {
+      "id": "chamonix-sud",
+      "name": { "en": "Chamonix Sud coach station", "ro": "Gara autocar Chamonix Sud" },
+      "lat": 45.9200, "lng": 6.8680,
+      "note": { "en": "Return coaches to Bergamo", "ro": "Autocarele de retur spre Bergamo" }
+    }
+  ],
+  "steps": [
+    {
+      "id": "glen-stansted",
+      "day": "2026-12-09",
+      "depart": "18:00",
+      "arrive": "21:00",
+      "approximate": true,
+      "mode": "plane",
+      "title": { "en": "Glen: Ryanair to Bergamo", "ro": "Glen: Ryanair spre Bergamo" },
+      "from": "bgy",
+      "to": "bgy",
+      "notes": { "en": "Any flight landing before Anca's. Update time when booked. Glen waits at arrivals.", "ro": "Orice zbor care aterizeaza inaintea Ancai. Actualizeaza ora. Glen asteapta la sosiri." },
+      "ticket": "ryanair-glen",
+      "bookingUrl": "https://www.ryanair.com"
+    },
+    {
+      "id": "w4-3551",
+      "day": "2026-12-09",
+      "depart": "21:10",
+      "departTz": "Europe/Bucharest",
+      "arrive": "22:00",
+      "mode": "plane",
+      "title": { "en": "Wizz Air W4 3551 to Bergamo", "ro": "Wizz Air W4 3551 spre Bergamo" },
+      "from": "tsr",
+      "to": "bgy",
+      "notes": { "en": "Airbus A320neo, 1h50. Cabin bags only saves time at the carousel. ID card is fine — Italy is Schengen.", "ro": "Airbus A320neo, 1h50. Doar bagaj de cabina. Carte de identitate — Italia e Schengen." },
+      "ticket": "w4-3551",
+      "bookingUrl": "https://wizzair.com",
+      "planB": { "en": "Flight delayed? Coaches into Milan run until around midnight.", "ro": "Zborul intarzie? Autocarele spre Milano circula pana pe la miezul noptii." }
+    },
+    {
+      "id": "coach-bgy-milan",
+      "day": "2026-12-09",
+      "depart": "22:20",
+      "arrive": "23:15",
+      "approximate": true,
+      "mode": "coach",
+      "title": { "en": "Airport coach to Milano Centrale", "ro": "Autocar aeroport — Milano Centrale" },
+      "from": "bgy",
+      "to": "milano-piazza",
+      "notes": { "en": "Flibco, Terravision or Autostradale. Bus bays outside arrivals. Every 20-30 min, about 8-12 EUR each.", "ro": "Flibco, Terravision sau Autostradale. Statii de autocar la iesirea din sosiri. La fiecare 20-30 min, ~8-12 EUR/pers." },
+      "bookingUrl": "https://www.flibco.com"
+    },
+    {
+      "id": "hotel-checkin",
+      "day": "2026-12-09",
+      "arrive": "23:25",
+      "approximate": true,
+      "mode": "hotel",
+      "title": { "en": "Check in to hotel", "ro": "Check-in la hotel" },
+      "from": "milano-piazza",
+      "to": "milan-hotel",
+      "notes": { "en": "A short walk from the station. Look for 24-hour reception.", "ro": "La cativa pasi de gara. Cauta receptie non-stop." },
+      "ticket": "hotel-milan",
+      "bookingUrl": "https://www.booking.com"
+    },
+    {
+      "id": "breakfast",
+      "day": "2026-12-10",
+      "depart": "06:15",
+      "approximate": true,
+      "mode": "walk",
+      "title": { "en": "Coffee and breakfast", "ro": "Cafea si mic dejun" },
+      "from": "milan-hotel",
+      "to": "milano-centrale",
+      "notes": { "en": "Up early. Coffee at the station or the hotel.", "ro": "Trezire devreme. Cafea la gara sau la hotel." }
+    },
+    {
+      "id": "ec60",
+      "day": "2026-12-10",
+      "depart": "07:10",
+      "arrive": "09:16",
+      "mode": "train",
+      "title": { "en": "EuroCity EC 60 to Brig", "ro": "EuroCity EC 60 spre Brig" },
+      "from": "milano-centrale",
+      "to": "brig",
+      "notes": { "en": "Seat reservation compulsory and included. Past Lake Maggiore and Domodossola, then through the Simplon tunnel into Switzerland. Be at the platform by 06:55 — boards show it 15 min before.", "ro": "Rezervare loc obligatorie si inclusa. Pe langa Lacul Maggiore si Domodossola, apoi prin tunelul Simplon in Elvetia. Fii la peron pana la 06:55 — afisajul arata peronul cu 15 min inainte." },
+      "ticket": "ec60",
+      "bookingUrl": "https://www.sbb.ch/en",
+      "planB": { "en": "Missed it? EC 40 at 08:10, arrives Brig 10:14. Same connections about an hour later; in Les Houches mid-afternoon.", "ro": "L-ai pierdut? EC 40 la 08:10, sosire Brig 10:14. Aceleasi conexiuni cu ~1h mai tarziu; in Les Houches dupa-amiaza." }
+    },
+    {
+      "id": "ir-brig-martigny",
+      "day": "2026-12-10",
+      "depart": "09:30",
+      "arrive": "10:20",
+      "approximate": true,
+      "mode": "train",
+      "title": { "en": "InterRegio to Martigny", "ro": "InterRegio spre Martigny" },
+      "from": "brig",
+      "to": "martigny",
+      "notes": { "en": "Every 30 min, about 47-50 min. Take the first after arrival. Direction: Lausanne or Geneva Airport.", "ro": "La fiecare 30 min, ~47-50 min. Ia primul dupa sosire. Directia: Lausanne sau Geneva Airport." },
+      "bookingUrl": "https://www.sbb.ch/en",
+      "planB": { "en": "Trains every 30 min. If you miss one, take the next.", "ro": "Trenuri la fiecare 30 min. Daca pierzi unul, ia-l pe urmatorul." }
+    },
+    {
+      "id": "mbe-martigny-vallorcine",
+      "day": "2026-12-10",
+      "depart": "11:00",
+      "arrive": "11:50",
+      "approximate": true,
+      "mode": "train",
+      "title": { "en": "Mont-Blanc Express to Vallorcine", "ro": "Mont-Blanc Express spre Vallorcine" },
+      "from": "martigny",
+      "to": "vallorcine",
+      "notes": { "en": "Hourly. About 50 min, up through the Trient gorge. The connection at Martigny can mean a wait of up to an hour. Own bay platform in the same station.", "ro": "Orar. ~50 min, prin cheile Trient. Conexiunea la Martigny poate insemna o asteptare de pana la o ora. Peron separat in aceeasi gara." },
+      "bookingUrl": "https://www.sbb.ch/en",
+      "planB": { "en": "Line disrupted? Sometimes runs replacement buses. Follow signs at Martigny.", "ro": "Linia intrerupta? Uneori ruleaza autobuze de inlocuire. Urmeaza indicatoarele la Martigny." }
+    },
+    {
+      "id": "train-vallorcine-lh",
+      "day": "2026-12-10",
+      "depart": "12:00",
+      "arrive": "12:50",
+      "approximate": true,
+      "mode": "train",
+      "title": { "en": "Train to Les Houches", "ro": "Trenul spre Les Houches" },
+      "from": "vallorcine",
+      "to": "les-houches-gare",
+      "notes": { "en": "French train towards Saint-Gervais. Usually waiting across the platform at Vallorcine. Through Argentiere and Chamonix — stay on at Chamonix.", "ro": "Trenul francez spre Saint-Gervais. De obicei asteapta pe peronul opus la Vallorcine. Prin Argentiere si Chamonix — ramai in tren la Chamonix." },
+      "planB": { "en": "Replacement bus from Vallorcine — follow the signs.", "ro": "Autobuz de inlocuire de la Vallorcine — urmeaza indicatoarele." }
+    },
+    {
+      "id": "arrive-lh",
+      "day": "2026-12-10",
+      "arrive": "13:00",
+      "approximate": true,
+      "mode": "walk",
+      "title": { "en": "Arrive Les Houches", "ro": "Sosire Les Houches" },
+      "from": "les-houches-gare",
+      "to": "les-houches-stay",
+      "notes": { "en": "Check in, collect the Carte d'Hote, shop at Carrefour. The afternoon is yours.", "ro": "Check-in, colecteaza Carte d'Hote, cumparaturi la Carrefour. Dupa-amiaza e a voastra." }
+    },
+    {
+      "id": "mountain-1",
+      "day": "2026-12-11",
+      "mode": "mountain",
+      "title": { "en": "Les Houches — free day", "ro": "Les Houches — zi libera" },
+      "from": "les-houches-stay",
+      "to": "les-houches-stay",
+      "notes": { "en": "Explore the village, rest, enjoy the mountains.", "ro": "Exploreaza satul, odihneste-te, bucura-te de munti." }
+    },
+    {
+      "id": "chamonix-trip",
+      "day": "2026-12-12",
+      "depart": "09:00",
+      "approximate": true,
+      "mode": "train",
+      "title": { "en": "Day trip to Chamonix", "ro": "Excursie la Chamonix" },
+      "from": "les-houches-gare",
+      "to": "chamonix-gare",
+      "notes": { "en": "Train to Chamonix (~17 min). Visit town, try the Montenvers rack railway to Mer de Glace.", "ro": "Tren spre Chamonix (~17 min). Viziteaza orasul, incearca trenul cu cremaliera Montenvers spre Mer de Glace." }
+    },
+    {
+      "id": "mountain-3",
+      "day": "2026-12-13",
+      "mode": "mountain",
+      "title": { "en": "Les Houches — last full day", "ro": "Les Houches — ultima zi completa" },
+      "from": "les-houches-stay",
+      "to": "les-houches-stay",
+      "notes": { "en": "Last day in the mountains. Pack in the evening.", "ro": "Ultima zi in munti. Fa bagajele seara." }
+    },
+    {
+      "id": "return",
+      "day": "2026-12-14",
+      "depart": "08:00",
+      "approximate": true,
+      "mode": "coach",
+      "title": { "en": "Return to Bergamo", "ro": "Intoarcere la Bergamo" },
+      "from": "chamonix-sud",
+      "to": "bgy",
+      "notes": { "en": "TODO: update with return journey details. Options: FlixBus direct from Chamonix, or train back through Switzerland.", "ro": "De actualizat cu detaliile calatoriei de intoarcere." },
+      "bookingUrl": "https://www.flixbus.com",
+      "planB": { "en": "If the coach is full, train back via Martigny, Brig, Milan.", "ro": "Daca autocarul e plin, tren prin Martigny, Brig, Milano." }
+    }
+  ],
+  "phrases": [
+    {
+      "lang": "it",
+      "label": { "en": "Italian", "ro": "Italiana" },
+      "items": [
+        { "phrase": "Da quale binario parte il treno per Brig?", "en": "Which platform for the train to Brig?", "ro": "De la ce peron pleaca trenul spre Brig?" },
+        { "phrase": "Un biglietto per Martigny, per favore.", "en": "A ticket to Martigny, please.", "ro": "Un bilet pana la Martigny, va rog." },
+        { "phrase": "A che ora e il prossimo treno?", "en": "What time is the next train?", "ro": "La ce ora este urmatorul tren?" },
+        { "phrase": "Dov'e l'uscita?", "en": "Where is the exit?", "ro": "Unde este iesirea?" },
+        { "phrase": "Quanto costa?", "en": "How much does it cost?", "ro": "Cat costa?" },
+        { "phrase": "Grazie.", "en": "Thank you.", "ro": "Multumesc." }
+      ]
+    },
+    {
+      "lang": "fr",
+      "label": { "en": "French", "ro": "Franceza" },
+      "items": [
+        { "phrase": "De quel quai part le train pour Les Houches?", "en": "Which platform for Les Houches?", "ro": "De la ce peron pleaca trenul spre Les Houches?" },
+        { "phrase": "Un billet pour Les Houches, s'il vous plait.", "en": "A ticket to Les Houches, please.", "ro": "Un bilet pana la Les Houches, va rog." },
+        { "phrase": "A quelle heure est le prochain train?", "en": "What time is the next train?", "ro": "La ce ora este urmatorul tren?" },
+        { "phrase": "Ou est la sortie?", "en": "Where is the exit?", "ro": "Unde este iesirea?" },
+        { "phrase": "Je voudrais un cafe, s'il vous plait.", "en": "I'd like a coffee, please.", "ro": "As vrea o cafea, va rog." },
+        { "phrase": "Merci.", "en": "Thank you.", "ro": "Multumesc." }
+      ]
+    }
+  ],
+  "emergency": {
+    "number": "112",
+    "accommodation": {
+      "name": { "en": "Accommodation in Les Houches", "ro": "Cazare in Les Houches" },
+      "address": "TODO",
+      "phone": "TODO"
+    },
+    "contacts": [
+      { "name": "Glen", "phone": "TODO" },
+      { "name": "Anca", "phone": "TODO" }
+    ]
+  },
+  "walletItems": [
+    { "id": "ryanair-glen", "stepId": "glen-stansted", "label": { "en": "Ryanair — Glen", "ro": "Ryanair — Glen" } },
+    { "id": "w4-3551", "stepId": "w4-3551", "label": { "en": "Wizz Air W4 3551 — Anca", "ro": "Wizz Air W4 3551 — Anca" } },
+    { "id": "hotel-milan", "stepId": "hotel-checkin", "label": { "en": "Milan hotel booking", "ro": "Rezervare hotel Milano" } },
+    { "id": "ec60", "stepId": "ec60", "label": { "en": "EuroCity EC 60 ticket", "ro": "Bilet EuroCity EC 60" } },
+    { "id": "mbe-ticket", "stepId": "mbe-martigny-vallorcine", "label": { "en": "Mont-Blanc Express ticket", "ro": "Bilet Mont-Blanc Express" } },
+    { "id": "accommodation-lh", "stepId": "arrive-lh", "label": { "en": "Les Houches booking", "ro": "Rezervare Les Houches" } },
+    { "id": "return-ticket", "stepId": "return", "label": { "en": "Return ticket", "ro": "Bilet retur" } }
+  ]
+}

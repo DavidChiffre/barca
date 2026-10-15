@@ -1,0 +1,50 @@
+{
+  "tabs": { "now": "Acum", "timeline": "Program", "map": "Harta", "wallet": "Portofel" },
+  "now": {
+    "next": "Urmator",
+    "inProgress": "In desfasurare",
+    "departed": "Plecat",
+    "planB": "Planul B",
+    "showOnMap": "Arata pe harta",
+    "openTicket": "Deschide biletul",
+    "nextTravel": "Urmatoarea zi de calatorie",
+    "bookThis": "Rezerva"
+  },
+  "time": {
+    "in": "in {time}",
+    "ago": "acum {time}",
+    "now": "acum"
+  },
+  "timeline": {
+    "notes": "Note",
+    "booking": "Rezerva"
+  },
+  "map": {
+    "directions": "Indicatii",
+    "downloadTiles": "Descarca harta offline",
+    "downloading": "Se descarca...",
+    "downloaded": "Harta salvata offline",
+    "you": "Esti aici"
+  },
+  "wallet": {
+    "add": "Adauga bilet",
+    "empty": "Niciun bilet adaugat. Apasa + pentru a importa un PDF sau o fotografie.",
+    "copy": "Copiaza",
+    "copied": "Copiat!",
+    "brighten": "Lumineaza",
+    "delete": "Sterge",
+    "forStep": "Pentru: {step}"
+  },
+  "menu": {
+    "phrases": "Expresii utile",
+    "emergency": "Urgenta",
+    "language": "English"
+  },
+  "phrases": { "title": "Expresii utile" },
+  "emergency": {
+    "title": "Urgenta",
+    "call": "Suna 112",
+    "accommodation": "Cazare",
+    "contacts": "Contacte"
+  }
+}
