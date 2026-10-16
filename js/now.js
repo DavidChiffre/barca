@@ -2,6 +2,7 @@ import { getSteps, getPlace, getTrip, getDays } from './data.js';
 import { t, localized, getLang } from './i18n.js';
 import { stepDepart, stepArrive, stepStatus, formatCountdown, fmtTime, fmtDate, findCurrentIndex } from './time.js';
 import { editableField, edited } from './edits.js';
+import { isAlertSet, toggleAlert, requestPermission, scheduleAll } from './alerts.js';
 
 const MODE = { plane: '✈️', coach: '🚌', train: '🚂', walk: '🚶', hotel: '🏨', mountain: '⛰️', shop: '🛒' };
 let idx = 0, timer = null, touchX = 0;
@@ -66,6 +67,7 @@ function render(el) {
       ${step.notes ? `<div class="now-notes" data-editable="step.${sid}.notes"></div>` : ''}
       ${step.ticket ? `<button class="btn-ticket" data-action="ticket" data-id="${step.ticket}">🎫 ${t('now.openTicket')}</button>` : ''}
       ${step.bookingUrl && !step.ticket ? `<a href="${step.bookingUrl}" target="_blank" rel="noopener" class="btn-book">${t('now.bookThis')}</a>` : ''}
+      ${dep && status === 'upcoming' ? `<button class="btn-remind${isAlertSet(sid) ? ' active' : ''}" data-action="remind" data-step="${sid}">🔔 ${isAlertSet(sid) ? t('now.reminded') : t('now.remindMe')}</button>` : ''}
       ${step.planB ? `<details class="planb"><summary>⚠️ ${t('now.planB')}</summary><p data-editable="step.${sid}.planB"></p></details>` : ''}
     </div>
     <div class="dots">${steps.map((_, i) => `<span class="dot${i === idx ? ' on' : ''}${i < idx ? ' past' : ''}"></span>`).join('')}</div>`;
@@ -77,6 +79,14 @@ function render(el) {
   });
   el.querySelector('[data-action="ticket"]')?.addEventListener('click', e => {
     window.dispatchEvent(new CustomEvent('barca-nav', { detail: { tab: 'wallet', ticket: e.target.dataset.id } }));
+  });
+  el.querySelector('[data-action="remind"]')?.addEventListener('click', async e => {
+    const btn = e.target.closest('[data-action="remind"]');
+    const ok = await requestPermission();
+    if (!ok) return;
+    const on = toggleAlert(btn.dataset.step);
+    btn.classList.toggle('active', on);
+    btn.textContent = '🔔 ' + (on ? t('now.reminded') : t('now.remindMe'));
   });
 }
 

@@ -346,3 +346,60 @@ textarea.edit-input { min-height: 60px; line-height: 1.5; }
 h2 .editable, .now-title.editable { display: block; border-bottom-style: dashed; }
 .now-notes.editable { display: block; }
 .detail-notes.editable { display: block; }
+
+/* ===== REMIND BUTTON ===== */
+.btn-remind {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: var(--raised); color: var(--muted); border: 1px solid var(--border);
+  padding: 8px 16px; border-radius: var(--radius);
+  font-size: 14px; font-weight: 500; cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-remind:active { opacity: 0.7; }
+.btn-remind.active {
+  background: rgba(78, 205, 196, 0.15); color: var(--primary);
+  border-color: var(--primary-dim);
+}
+
+/* ===== CHECKLIST ===== */
+.checklist-sheet { max-height: 90vh; }
+.checklist-progress {
+  font-size: 14px; color: var(--primary); font-weight: 600;
+  margin-bottom: 16px;
+}
+.checklist-cat {
+  font-size: 12px; text-transform: uppercase; letter-spacing: 1px;
+  color: var(--muted); margin: 16px 0 8px;
+}
+.checklist-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 0; border-bottom: 1px solid var(--border);
+  font-size: 14px; cursor: pointer;
+  transition: opacity 0.15s;
+}
+.checklist-item.done { opacity: 0.45; text-decoration: line-through; }
+.checklist-item input[type="checkbox"] {
+  width: 20px; height: 20px; accent-color: var(--primary);
+  flex-shrink: 0; cursor: pointer;
+}
+.checklist-remove {
+  margin-left: auto; background: none; border: none;
+  color: var(--dim); font-size: 14px; cursor: pointer;
+  padding: 4px 8px; border-radius: 4px;
+}
+.checklist-remove:active { color: var(--accent); }
+.checklist-add {
+  display: flex; gap: 8px; margin-top: 12px;
+}
+.checklist-add-input {
+  flex: 1; background: var(--raised); color: var(--text);
+  border: 1px solid var(--border); border-radius: 8px;
+  padding: 8px 12px; font-size: 14px; outline: none;
+}
+.checklist-add-input:focus { border-color: var(--primary); }
+.checklist-add-btn {
+  background: var(--primary); color: var(--bg); border: none;
+  width: 36px; height: 36px; border-radius: 8px;
+  font-size: 20px; font-weight: 600; cursor: pointer;
+}
+.checklist-add-btn:active { opacity: 0.8; }

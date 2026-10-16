@@ -8,7 +8,9 @@
     "showOnMap": "Show on map",
     "openTicket": "Open ticket",
     "nextTravel": "Next travel day",
-    "bookThis": "Book this"
+    "bookThis": "Book this",
+    "remindMe": "Remind me",
+    "reminded": "Reminder set"
   },
   "time": {
     "in": "in {time}",
@@ -38,7 +40,8 @@
   "menu": {
     "phrases": "Useful phrases",
     "emergency": "Emergency info",
-    "language": "Limba romana"
+    "language": "Limba romana",
+    "checklist": "Checklist"
   },
   "phrases": { "title": "Useful phrases" },
   "emergency": {

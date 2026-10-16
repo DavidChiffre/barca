@@ -8,7 +8,9 @@
     "showOnMap": "Arata pe harta",
     "openTicket": "Deschide biletul",
     "nextTravel": "Urmatoarea zi de calatorie",
-    "bookThis": "Rezerva"
+    "bookThis": "Rezerva",
+    "remindMe": "Aminteste-mi",
+    "reminded": "Alertă setată"
   },
   "time": {
     "in": "in {time}",
@@ -38,7 +40,8 @@
   "menu": {
     "phrases": "Expresii utile",
     "emergency": "Urgenta",
-    "language": "English"
+    "language": "English",
+    "checklist": "Lista de verificare"
   },
   "phrases": { "title": "Expresii utile" },
   "emergency": {

@@ -2,6 +2,7 @@ import { getSteps, getDays, getPlace, getTrip } from './data.js';
 import { t, localized, getLang } from './i18n.js';
 import { stepDepart, stepArrive, stepStatus, fmtTime, fmtDate, duration } from './time.js';
 import { editableField, edited, getDayOrder, setDayOrder } from './edits.js';
+import { isAlertSet, toggleAlert, requestPermission } from './alerts.js';
 
 const MODE = { plane: '✈️', coach: '🚌', train: '🚂', walk: '🚶', hotel: '🏨', mountain: '⛰️', shop: '🛒' };
 
@@ -272,6 +273,7 @@ function showDetail(id) {
   const from = getPlace(step.from), to = getPlace(step.to);
   const dep = stepDepart(step, tz), arr = stepArrive(step, tz);
   const dur = duration(dep, arr);
+  const status = stepStatus(step, tz);
   const overlay = document.getElementById('detail-overlay');
   const sid = step.id;
 
@@ -291,6 +293,7 @@ function showDetail(id) {
         ${step.ticket ? `<button class="btn" data-action="ticket" data-id="${step.ticket}">🎫 ${t('now.openTicket')}</button>` : ''}
         ${step.bookingUrl ? `<a href="${step.bookingUrl}" target="_blank" rel="noopener" class="btn">${t('now.bookThis')}</a>` : ''}
         ${from ? `<button class="btn" data-action="map" data-place="${step.from}">📍 ${t('now.showOnMap')}</button>` : ''}
+        ${dep && status === 'upcoming' ? `<button class="btn btn-remind${isAlertSet(sid) ? ' active' : ''}" data-action="remind" data-step="${sid}">🔔 ${isAlertSet(sid) ? t('now.reminded') : t('now.remindMe')}</button>` : ''}
       </div>
     </div>`;
 
@@ -327,6 +330,14 @@ function showDetail(id) {
   overlay.querySelector('[data-action="ticket"]')?.addEventListener('click', e => {
     overlay.classList.add('hidden');
     window.dispatchEvent(new CustomEvent('barca-nav', { detail: { tab: 'wallet', ticket: e.target.dataset.id } }));
+  });
+  overlay.querySelector('[data-action="remind"]')?.addEventListener('click', async e => {
+    const btn = e.target.closest('[data-action="remind"]');
+    const ok = await requestPermission();
+    if (!ok) return;
+    const on = toggleAlert(btn.dataset.step);
+    btn.classList.toggle('active', on);
+    btn.textContent = '🔔 ' + (on ? t('now.reminded') : t('now.remindMe'));
   });
   overlay.addEventListener('click', e => { if (e.target === overlay) overlay.classList.add('hidden'); });
 }

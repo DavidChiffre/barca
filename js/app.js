@@ -4,6 +4,8 @@ import { initNow, goToStep } from './now.js';
 import { initTimeline } from './timeline.js';
 import { initMap, flyToPlace, downloadTiles } from './map.js';
 import { initWallet, openTicket } from './wallet.js';
+import { showChecklist } from './checklist.js';
+import { scheduleAll } from './alerts.js';
 
 let currentTab = 'now';
 
@@ -22,6 +24,8 @@ async function boot() {
     if (place) setTimeout(() => flyToPlace(place), 300);
     if (ticket) setTimeout(() => openTicket(ticket), 100);
   });
+
+  scheduleAll();
 
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./sw.js');
@@ -58,6 +62,7 @@ function setupMenu() {
   drawer.addEventListener('click', e => {
     if (e.target === drawer) drawer.classList.add('hidden');
     const action = e.target.closest('[data-menu]')?.dataset.menu;
+    if (action === 'checklist') showChecklist();
     if (action === 'phrases') showPhrases();
     if (action === 'emergency') showEmergency();
     if (action === 'lang') toggleLang();
@@ -75,6 +80,7 @@ function updateLabels() {
   document.querySelectorAll('#tab-bar button').forEach(btn => {
     btn.textContent = t(`tabs.${btn.dataset.tab}`);
   });
+  document.querySelector('[data-menu="checklist"]').textContent = t('menu.checklist');
   document.querySelector('[data-menu="phrases"]').textContent = t('menu.phrases');
   document.querySelector('[data-menu="emergency"]').textContent = t('menu.emergency');
   document.querySelector('[data-menu="lang"]').textContent = t('menu.language');
