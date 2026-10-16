@@ -87,6 +87,18 @@
       "note": { "en": "Rack railway to the glacier", "ro": "Cale ferata cu cremaliera spre ghetar" }
     },
     {
+      "id": "aiguille-du-midi",
+      "name": { "en": "Aiguille du Midi", "ro": "Aiguille du Midi" },
+      "lat": 45.8785, "lng": 6.8873,
+      "note": { "en": "Cable car from Chamonix — 3,842 m summit", "ro": "Telecabina din Chamonix — varf la 3.842 m" }
+    },
+    {
+      "id": "deep-nature-spa",
+      "name": { "en": "Deep Nature Spa, Les Houches", "ro": "Deep Nature Spa, Les Houches" },
+      "lat": 45.8880, "lng": 6.8040,
+      "note": { "en": "Heated pool, sauna, hammam, Nordic baths with Mont Blanc views", "ro": "Piscina incalzita, sauna, hammam, bai nordice cu vedere spre Mont Blanc" }
+    },
+    {
       "id": "chamonix-sud",
       "name": { "en": "Chamonix Sud coach station", "ro": "Gara autocar Chamonix Sud" },
       "lat": 45.9200, "lng": 6.8680,
@@ -230,21 +242,21 @@
       "id": "mountain-1",
       "day": "2026-12-18",
       "mode": "mountain",
-      "title": { "en": "Les Houches — free day", "ro": "Les Houches — zi libera" },
+      "title": { "en": "Explore Les Houches", "ro": "Exploreaza Les Houches" },
       "from": "les-houches-stay",
       "to": "les-houches-stay",
-      "notes": { "en": "Explore the village, rest, enjoy the mountains.", "ro": "Exploreaza satul, odihneste-te, bucura-te de munti." }
+      "notes": { "en": "Les Houches ski area opens Dec 19 — today try the Tramway du Mont Blanc to Bellevue (1800 m), snowshoe in the valley, or warm up at the Deep Nature Spa (heated pool, sauna, Nordic baths). Brévent/Flégère and Grands Montets ski areas are open if you want to ski. Carrefour for supplies.", "ro": "Domeniul schiabil Les Houches se deschide pe 19 dec — azi incearca Tramvaiul Mont Blanc spre Bellevue (1800 m), plimbare cu rachete in vale, sau incalzire la Deep Nature Spa (piscina, sauna, bai nordice). Brévent/Flégère si Grands Montets sunt deschise daca vrei sa schiezi. Carrefour pentru provizii." }
     },
     {
       "id": "chamonix-trip",
       "day": "2026-12-19",
-      "depart": "09:00",
+      "depart": "08:30",
       "approximate": true,
       "mode": "train",
-      "title": { "en": "Day trip to Chamonix", "ro": "Excursie la Chamonix" },
+      "title": { "en": "Aiguille du Midi + Chamonix", "ro": "Aiguille du Midi + Chamonix" },
       "from": "les-houches-gare",
-      "to": "chamonix-gare",
-      "notes": { "en": "Train to Chamonix (~17 min). Visit town, try the Montenvers rack railway to Mer de Glace.", "ro": "Tren spre Chamonix (~17 min). Viziteaza orasul, incearca trenul cu cremaliera Montenvers spre Mer de Glace." }
+      "to": "aiguille-du-midi",
+      "notes": { "en": "Aiguille du Midi opens today (Dec 19)! Cable car 8:10–16:30, last round trip at 15:00 — go early. 3,842 m summit with Mont Blanc panorama. Then walk to the Montenvers rack railway for Mer de Glace (last departure 14:30). Chamonix Christmas market likely open from today too — mulled wine, raclette, crêpes on Place du Triangle de l'Amitié.", "ro": "Aiguille du Midi se deschide azi (19 dec)! Telecabina 8:10–16:30, ultima tura dus-intors la 15:00 — mergi devreme. Varf la 3.842 m cu panorama Mont Blanc. Apoi mergi la Montenvers cu trenul cu cremaliera spre Mer de Glace (ultima plecare 14:30). Targul de Craciun din Chamonix probabil deschis de azi — vin fiert, raclette, clatite pe Place du Triangle de l'Amitié." }
     },
     {
       "id": "mountain-3",
@@ -253,7 +265,7 @@
       "title": { "en": "Les Houches — last full day", "ro": "Les Houches — ultima zi completa" },
       "from": "les-houches-stay",
       "to": "les-houches-stay",
-      "notes": { "en": "Last day in the mountains. Pack in the evening.", "ro": "Ultima zi in munti. Fa bagajele seara." }
+      "notes": { "en": "Les Houches ski area is now open. Ski or take the Bellevue gondola for views. Deep Nature Spa for a rest day. Christmas market in Chamonix still running if you missed it. Pack in the evening.", "ro": "Domeniul Les Houches e acum deschis. Schiaza sau ia telecabina Bellevue pentru privelistea. Deep Nature Spa pentru o zi de odihna. Targul de Craciun din Chamonix inca deschis daca l-ai ratat. Fa bagajele seara." }
     },
     {
       "id": "return",
