@@ -3,12 +3,12 @@
   "version": "2026-10-15",
   "defaultTimezone": "Europe/Rome",
   "days": [
-    { "date": "2026-12-09", "label": { "en": "Fly in", "ro": "Zborul" }, "journey": "A" },
-    { "date": "2026-12-10", "label": { "en": "Train to Les Houches", "ro": "Trenul spre Les Houches" }, "journey": "A" },
-    { "date": "2026-12-11", "label": { "en": "Les Houches", "ro": "Les Houches" }, "rest": true },
-    { "date": "2026-12-12", "label": { "en": "Les Houches", "ro": "Les Houches" }, "rest": true },
-    { "date": "2026-12-13", "label": { "en": "Les Houches", "ro": "Les Houches" }, "rest": true },
-    { "date": "2026-12-14", "label": { "en": "Return", "ro": "Intoarcerea" }, "journey": "C" }
+    { "date": "2026-12-16", "label": { "en": "Fly in", "ro": "Zborul" }, "journey": "A" },
+    { "date": "2026-12-17", "label": { "en": "Train to Les Houches", "ro": "Trenul spre Les Houches" }, "journey": "A" },
+    { "date": "2026-12-18", "label": { "en": "Les Houches", "ro": "Les Houches" }, "rest": true },
+    { "date": "2026-12-19", "label": { "en": "Les Houches", "ro": "Les Houches" }, "rest": true },
+    { "date": "2026-12-20", "label": { "en": "Les Houches", "ro": "Les Houches" }, "rest": true },
+    { "date": "2026-12-21", "label": { "en": "Return", "ro": "Intoarcerea" }, "journey": "C" }
   ],
   "places": [
     {
@@ -96,7 +96,7 @@
   "steps": [
     {
       "id": "glen-stansted",
-      "day": "2026-12-09",
+      "day": "2026-12-16",
       "depart": "18:00",
       "arrive": "21:00",
       "approximate": true,
@@ -110,7 +110,7 @@
     },
     {
       "id": "w4-3551",
-      "day": "2026-12-09",
+      "day": "2026-12-16",
       "depart": "21:10",
       "departTz": "Europe/Bucharest",
       "arrive": "22:00",
@@ -125,7 +125,7 @@
     },
     {
       "id": "coach-bgy-milan",
-      "day": "2026-12-09",
+      "day": "2026-12-16",
       "depart": "22:20",
       "arrive": "23:15",
       "approximate": true,
@@ -138,7 +138,7 @@
     },
     {
       "id": "hotel-checkin",
-      "day": "2026-12-09",
+      "day": "2026-12-16",
       "arrive": "23:25",
       "approximate": true,
       "mode": "hotel",
@@ -151,7 +151,7 @@
     },
     {
       "id": "breakfast",
-      "day": "2026-12-10",
+      "day": "2026-12-17",
       "depart": "06:15",
       "approximate": true,
       "mode": "walk",
@@ -162,7 +162,7 @@
     },
     {
       "id": "ec60",
-      "day": "2026-12-10",
+      "day": "2026-12-17",
       "depart": "07:10",
       "arrive": "09:16",
       "mode": "train",
@@ -176,7 +176,7 @@
     },
     {
       "id": "ir-brig-martigny",
-      "day": "2026-12-10",
+      "day": "2026-12-17",
       "depart": "09:30",
       "arrive": "10:20",
       "approximate": true,
@@ -190,7 +190,7 @@
     },
     {
       "id": "mbe-martigny-vallorcine",
-      "day": "2026-12-10",
+      "day": "2026-12-17",
       "depart": "11:00",
       "arrive": "11:50",
       "approximate": true,
@@ -204,7 +204,7 @@
     },
     {
       "id": "train-vallorcine-lh",
-      "day": "2026-12-10",
+      "day": "2026-12-17",
       "depart": "12:00",
       "arrive": "12:50",
       "approximate": true,
@@ -217,7 +217,7 @@
     },
     {
       "id": "arrive-lh",
-      "day": "2026-12-10",
+      "day": "2026-12-17",
       "arrive": "13:00",
       "approximate": true,
       "mode": "walk",
@@ -228,7 +228,7 @@
     },
     {
       "id": "mountain-1",
-      "day": "2026-12-11",
+      "day": "2026-12-18",
       "mode": "mountain",
       "title": { "en": "Les Houches — free day", "ro": "Les Houches — zi libera" },
       "from": "les-houches-stay",
@@ -237,7 +237,7 @@
     },
     {
       "id": "chamonix-trip",
-      "day": "2026-12-12",
+      "day": "2026-12-19",
       "depart": "09:00",
       "approximate": true,
       "mode": "train",
@@ -248,7 +248,7 @@
     },
     {
       "id": "mountain-3",
-      "day": "2026-12-13",
+      "day": "2026-12-20",
       "mode": "mountain",
       "title": { "en": "Les Houches — last full day", "ro": "Les Houches — ultima zi completa" },
       "from": "les-houches-stay",
@@ -257,7 +257,7 @@
     },
     {
       "id": "return",
-      "day": "2026-12-14",
+      "day": "2026-12-21",
       "depart": "08:00",
       "approximate": true,
       "mode": "coach",
