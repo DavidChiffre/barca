@@ -165,6 +165,34 @@ main {
 .tl-chevron { color: var(--dim); font-size: 20px; }
 .tl-empty { color: var(--dim); font-size: 14px; padding: 8px 0; }
 
+/* Drag and drop */
+.tl-rest-block { margin-bottom: 20px; }
+.tl-drag-step {
+  display: flex; align-items: center; gap: 8px; width: 100%;
+  background: var(--surface); border: none; color: var(--text);
+  padding: 12px; border-radius: var(--radius); margin-bottom: 6px;
+  cursor: pointer; text-align: left; font-size: 14px;
+  touch-action: pan-x;
+}
+.tl-drag-step:active { background: var(--raised); }
+.tl-drag-handle {
+  font-size: 18px; color: var(--dim); cursor: grab;
+  flex-shrink: 0; width: 24px; text-align: center;
+  padding: 4px 0; user-select: none; -webkit-user-select: none;
+  touch-action: none;
+}
+.tl-drag-handle:active { color: var(--primary); }
+.tl-dragging { opacity: 0.3; }
+.tl-ghost {
+  position: fixed; z-index: 300; pointer-events: none;
+  opacity: 0.9; transform: scale(1.02);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  border-radius: var(--radius);
+  background: var(--raised);
+}
+.tl-drop-above { border-top: 2px solid var(--primary); padding-top: 6px; }
+.tl-drop-below { border-bottom: 2px solid var(--primary); padding-bottom: 6px; }
+
 /* ===== MAP TAB ===== */
 #tab-map { position: relative; }
 .leaflet-container { height: 100%; width: 100%; background: var(--bg); }

@@ -77,3 +77,13 @@ export function edited(obj, path, lang) {
   if (typeof obj === 'string') return obj;
   return obj[lang] || obj.en || '';
 }
+
+const ORDER_KEY = 'barca-day-order';
+
+export function getDayOrder() {
+  try { return JSON.parse(localStorage.getItem(ORDER_KEY)) || null; } catch { return null; }
+}
+
+export function setDayOrder(order) {
+  localStorage.setItem(ORDER_KEY, JSON.stringify(order));
+}
