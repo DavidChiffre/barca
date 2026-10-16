@@ -28,7 +28,15 @@ async function boot() {
   scheduleAll();
 
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js');
+    const reg = await navigator.serviceWorker.register('./sw.js');
+    reg.addEventListener('updatefound', () => {
+      const next = reg.installing;
+      next.addEventListener('statechange', () => {
+        if (next.state === 'activated' && navigator.serviceWorker.controller) {
+          window.location.reload();
+        }
+      });
+    });
   }
 }
 
