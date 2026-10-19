@@ -1,5 +1,11 @@
 {
-  "tabs": { "now": "Acum", "timeline": "Program", "map": "Harta", "wallet": "Portofel" },
+  "tabs": {
+    "now": "Acum",
+    "timeline": "Program",
+    "map": "Harta",
+    "wallet": "Portofel",
+    "weather": "Vremea"
+  },
   "now": {
     "next": "Urmator",
     "inProgress": "In desfasurare",
@@ -43,11 +49,25 @@
     "language": "English",
     "checklist": "Lista de verificare"
   },
-  "phrases": { "title": "Expresii utile" },
+  "phrases": {
+    "title": "Expresii utile"
+  },
   "emergency": {
     "title": "Urgenta",
     "call": "Suna 112",
     "accommodation": "Cazare",
     "contacts": "Contacte"
+  },
+  "weather": {
+    "title": "Vremea",
+    "high": "Maxima",
+    "low": "Minima",
+    "mean": "Media",
+    "estimate": "Estimare",
+    "today": "Azi",
+    "forecast": "Prognoza live (Météo-France)",
+    "sources": "Surse",
+    "sunrise": "Rasarit",
+    "sunset": "Apus"
   }
 }

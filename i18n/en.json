@@ -1,5 +1,11 @@
 {
-  "tabs": { "now": "Now", "timeline": "Timeline", "map": "Map", "wallet": "Wallet" },
+  "tabs": {
+    "now": "Now",
+    "timeline": "Timeline",
+    "map": "Map",
+    "wallet": "Wallet",
+    "weather": "Weather"
+  },
   "now": {
     "next": "Next",
     "inProgress": "In progress",
@@ -43,11 +49,25 @@
     "language": "Limba romana",
     "checklist": "Checklist"
   },
-  "phrases": { "title": "Useful phrases" },
+  "phrases": {
+    "title": "Useful phrases"
+  },
   "emergency": {
     "title": "Emergency",
     "call": "Call 112",
     "accommodation": "Accommodation",
     "contacts": "Contacts"
+  },
+  "weather": {
+    "title": "Weather",
+    "high": "High",
+    "low": "Low",
+    "mean": "Mean",
+    "estimate": "Estimate",
+    "today": "Today",
+    "forecast": "Live forecast (Météo-France)",
+    "sources": "Sources",
+    "sunrise": "Sunrise",
+    "sunset": "Sunset"
   }
 }

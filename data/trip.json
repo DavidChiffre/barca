@@ -327,5 +327,144 @@
     { "id": "mbe-ticket", "stepId": "mbe-martigny-vallorcine", "label": { "en": "Mont-Blanc Express ticket", "ro": "Bilet Mont-Blanc Express" } },
     { "id": "accommodation-lh", "stepId": "arrive-lh", "label": { "en": "Les Houches booking", "ro": "Rezervare Les Houches" } },
     { "id": "return-ticket", "stepId": "return", "label": { "en": "Return ticket", "ro": "Bilet retur" } }
-  ]
+  ],
+  "weather": {
+    "note": {
+      "en": "Long-term December averages, not a forecast. Real forecasts start to mean something about ten days out.",
+      "ro": "Medii pe termen lung pentru decembrie, nu o prognoza. Prognozele reale devin utile cu aproximativ zece zile inainte."
+    },
+    "forecastUrl": "https://meteofrance.com/",
+    "daylight": {
+      "sunrise": "08:08",
+      "sunset": "16:48",
+      "label": {
+        "en": "Daylight in the valley (16 Dec)",
+        "ro": "Lumina zilei in vale (16 dec)"
+      }
+    },
+    "places": [
+      {
+        "id": "milan",
+        "name": {
+          "en": "Milan and Bergamo",
+          "ro": "Milano si Bergamo"
+        },
+        "when": {
+          "en": "16 and 21 Dec",
+          "ro": "16 si 21 dec"
+        },
+        "days": [
+          "2026-12-16",
+          "2026-12-21"
+        ],
+        "altitude": 120,
+        "high": 8,
+        "low": 2,
+        "estimate": false,
+        "notes": {
+          "en": "Rain on roughly a quarter of December days. Bergamo airport runs much the same.",
+          "ro": "Ploua in aproximativ un sfert din zilele de decembrie. Aeroportul Bergamo este similar."
+        }
+      },
+      {
+        "id": "les-houches",
+        "name": {
+          "en": "Les Houches and Chamonix valley",
+          "ro": "Les Houches si valea Chamonix"
+        },
+        "when": {
+          "en": "17 to 21 Dec",
+          "ro": "17 - 21 dec"
+        },
+        "days": [
+          "2026-12-17",
+          "2026-12-18",
+          "2026-12-19",
+          "2026-12-20",
+          "2026-12-21"
+        ],
+        "altitude": 1000,
+        "high": 3,
+        "low": -5,
+        "mean": -1,
+        "estimate": false,
+        "notes": {
+          "en": "December is the snowiest month: about 56 cm of snowfall on average. Nights well below freezing; pavements icy in the mornings.",
+          "ro": "Decembrie este luna cu cea mai multa zapada: in medie aproximativ 56 cm. Noptile sunt sub zero; trotuarele sunt alunecoase dimineata."
+        }
+      },
+      {
+        "id": "montenvers",
+        "name": {
+          "en": "Montenvers / Mer de Glace",
+          "ro": "Montenvers / Mer de Glace"
+        },
+        "when": {
+          "en": "If you go",
+          "ro": "Daca mergeti"
+        },
+        "days": [],
+        "altitude": 1913,
+        "high": -2,
+        "low": -10,
+        "estimate": true,
+        "notes": {
+          "en": "The gondola down to the glacier opens for winter on 19 Dec 2026, so go on the 19th or later.",
+          "ro": "Telecabina spre ghetar se deschide pentru iarna pe 19 dec 2026, deci mergeti pe 19 sau mai tarziu."
+        }
+      },
+      {
+        "id": "aiguille",
+        "name": {
+          "en": "Aiguille du Midi summit",
+          "ro": "Varful Aiguille du Midi"
+        },
+        "when": {
+          "en": "19 Dec",
+          "ro": "19 dec"
+        },
+        "days": [
+          "2026-12-19"
+        ],
+        "altitude": 3842,
+        "high": -14,
+        "low": -22,
+        "estimate": true,
+        "notes": {
+          "en": "Wind chill takes it much lower. Even in summer the viewing terraces can drop to -10°C. Hat, gloves, every layer you have.",
+          "ro": "Vantul o face mult mai rece. Chiar si vara terasele pot cobori la -10°C. Caciula, manusi, toate straturile."
+        }
+      }
+    ],
+    "estimateNote": {
+      "en": "Estimate: valley average minus about 0.6°C per 100 m of height. No published averages for this station.",
+      "ro": "Estimare: media din vale minus aproximativ 0,6°C la fiecare 100 m altitudine. Nu exista medii publicate pentru aceasta statie."
+    },
+    "sources": [
+      {
+        "label": "Chamonix normals 1991–2020 (climate-zone.com)",
+        "url": "https://www.climate-zone.com/climate/fr/chamonix-mont-blanc/"
+      },
+      {
+        "label": "Climats et voyages: France en décembre",
+        "url": "https://www.climatsetvoyages.com/temperature/france/decembre"
+      },
+      {
+        "label": "Milan in December (NOAA GHCN data)",
+        "url": "https://weatheronthisday.com/intl/milan/december"
+      },
+      {
+        "label": "Chamonix sunrise and sunset (weather2travel)",
+        "url": "https://weather2travel.com/france/chamonix/december/"
+      },
+      {
+        "label": "Mer de Glace gondola dates",
+        "url": "https://www.passy-mont-blanc.com/en/?p=12620"
+      },
+      {
+        "label": "Aiguille du Midi (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Aiguille_du_Midi"
+      }
+    ]
+  }
 }

@@ -1,4 +1,4 @@
-const CACHE = 'barca-v6';
+const CACHE = 'barca-v7';
 const TILES = 'barca-tiles-v1';
 const SHELL = [
   './',
@@ -12,6 +12,7 @@ const SHELL = [
   './js/timeline.js',
   './js/map.js',
   './js/wallet.js',
+  './js/weather.js',
   './js/edits.js',
   './js/checklist.js',
   './js/alerts.js',

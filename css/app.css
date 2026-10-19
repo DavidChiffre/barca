@@ -403,3 +403,38 @@ h2 .editable, .now-title.editable { display: block; border-bottom-style: dashed;
   font-size: 20px; font-weight: 600; cursor: pointer;
 }
 .checklist-add-btn:active { opacity: 0.8; }
+
+/* ===== WEATHER TAB ===== */
+.wx-note { font-size: 13px; color: var(--muted); line-height: 1.5; margin-bottom: 12px; }
+.wx-daylight {
+  background: var(--surface); border-radius: var(--radius);
+  padding: 12px; margin-bottom: 8px;
+}
+.wx-daylight-label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.wx-daylight-times { display: flex; gap: 20px; font-size: 14px; }
+.wx-daylight-times strong { font-weight: 600; margin-left: 4px; }
+.wx-card {
+  background: var(--surface); border-radius: var(--radius);
+  padding: 14px 12px; margin-bottom: 8px; border-left: 3px solid transparent;
+}
+.wx-card.today { border-left-color: var(--primary); }
+.wx-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+.wx-name { font-weight: 600; font-size: 15px; }
+.wx-meta { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.wx-today { color: var(--primary); font-weight: 600; }
+.wx-badge {
+  font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px;
+  color: var(--accent); border: 1px solid var(--accent);
+  padding: 2px 6px; border-radius: 6px; flex-shrink: 0;
+}
+.wx-temps { display: flex; gap: 24px; margin: 12px 0 8px; }
+.wx-temp { display: flex; flex-direction: column; }
+.wx-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.wx-val { font-size: 28px; font-weight: 300; font-variant-numeric: tabular-nums; }
+.wx-val.hi { color: var(--text); }
+.wx-val.lo { color: #8ab4ff; }
+.wx-notes { font-size: 13px; color: var(--muted); line-height: 1.5; }
+.wx-est { font-size: 11px; color: var(--dim); line-height: 1.4; margin-top: 6px; }
+.wx-forecast { margin: 8px 0 4px; }
+.wx-sources { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+.wx-sources a { color: var(--primary); font-size: 13px; text-decoration: none; }
