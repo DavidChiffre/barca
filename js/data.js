@@ -17,3 +17,4 @@ export function getStepsForDay(date) { return getSteps().filter(s => s.day === d
 export function getWalletItems() { return tripData?.walletItems || []; }
 export function getPhrases() { return tripData?.phrases || []; }
 export function getEmergency() { return tripData?.emergency || {}; }
+export function getFlights() { return tripData?.flights || {}; }

@@ -1,4 +1,4 @@
-const CACHE = 'barca-v7';
+const CACHE = 'barca-v8';
 const TILES = 'barca-tiles-v1';
 const SHELL = [
   './',
@@ -13,6 +13,7 @@ const SHELL = [
   './js/map.js',
   './js/wallet.js',
   './js/weather.js',
+  './js/flights.js',
   './js/edits.js',
   './js/checklist.js',
   './js/alerts.js',
@@ -55,6 +56,11 @@ self.addEventListener('fetch', e => {
         )
       )
     );
+    return;
+  }
+
+  if (url.hostname === 'api.open-meteo.com') {
+    e.respondWith(fetch(e.request).catch(() => caches.match(e.request)));
     return;
   }
 

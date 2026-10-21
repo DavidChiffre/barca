@@ -4,6 +4,7 @@
     "timeline": "Timeline",
     "map": "Map",
     "wallet": "Wallet",
+    "flights": "Flights",
     "weather": "Weather"
   },
   "now": {
@@ -58,6 +59,14 @@
     "accommodation": "Accommodation",
     "contacts": "Contacts"
   },
+  "flights": {
+    "upcoming": "Upcoming",
+    "inFlight": "In flight",
+    "landed": "Landed",
+    "landing": "Landing in {time}",
+    "searchFlights": "Search flights",
+    "noFlights": "No flights in this trip."
+  },
   "weather": {
     "title": "Weather",
     "high": "High",
@@ -68,6 +77,11 @@
     "forecast": "Live forecast (Météo-France)",
     "sources": "Sources",
     "sunrise": "Sunrise",
-    "sunset": "Sunset"
+    "sunset": "Sunset",
+    "liveNow": "Right now",
+    "tripForecast": "Trip forecast",
+    "averages": "Historical averages",
+    "feelsLike": "Feels like",
+    "lastUpdated": "Updated at"
   }
 }

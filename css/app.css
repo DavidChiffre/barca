@@ -48,8 +48,8 @@ html, body {
   padding-bottom: var(--safe-b);
 }
 #tab-bar button {
-  flex: 1; padding: 10px 4px 8px; border: none; background: none;
-  color: var(--muted); font-size: 11px; font-weight: 500;
+  flex: 1; padding: 10px 2px 8px; border: none; background: none;
+  color: var(--muted); font-size: 10px; font-weight: 500;
   cursor: pointer; transition: color 0.15s;
 }
 #tab-bar button.active { color: var(--primary); }
@@ -438,3 +438,120 @@ h2 .editable, .now-title.editable { display: block; border-bottom-style: dashed;
 .wx-forecast { margin: 8px 0 4px; }
 .wx-sources { list-style: none; display: flex; flex-direction: column; gap: 4px; }
 .wx-sources a { color: var(--primary); font-size: 13px; text-decoration: none; }
+
+/* ===== FLIGHTS TAB ===== */
+.fl-card {
+  background: var(--surface); border-radius: var(--radius);
+  padding: 16px; margin-bottom: 12px;
+  border-left: 3px solid var(--dim);
+}
+.fl-card.fl-live { border-left-color: var(--primary); }
+.fl-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 4px;
+}
+.fl-airline { font-weight: 600; font-size: 15px; }
+.fl-badge {
+  font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px;
+  padding: 3px 8px; border-radius: 6px;
+  color: var(--muted); border: 1px solid var(--dim);
+}
+.fl-status-live { color: var(--primary); border-color: var(--primary); background: rgba(78, 205, 196, 0.1); }
+.fl-status-landed { color: #6bff6b; border-color: #6bff6b; background: rgba(107, 255, 107, 0.1); }
+.fl-number { font-size: 13px; color: var(--muted); font-family: monospace; }
+.fl-passenger { font-size: 13px; color: var(--primary-dim); margin-top: 2px; }
+
+.fl-route {
+  display: flex; align-items: center; gap: 12px;
+  margin: 16px 0 12px; padding: 12px;
+  background: var(--raised); border-radius: 8px;
+}
+.fl-airport { display: flex; flex-direction: column; align-items: center; min-width: 0; }
+.fl-code { font-size: 22px; font-weight: 700; letter-spacing: 1px; }
+.fl-city { font-size: 11px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 80px; text-align: center; }
+.fl-time { font-size: 13px; color: var(--text); margin-top: 4px; }
+.fl-time small { color: var(--muted); font-size: 10px; }
+.fl-arrow {
+  flex: 1; display: flex; align-items: center; gap: 0;
+  min-width: 40px;
+}
+.fl-line { flex: 1; height: 1px; background: var(--dim); }
+.fl-plane-icon { font-size: 16px; color: var(--primary); margin: 0 2px; }
+
+.fl-date { font-size: 13px; color: var(--muted); text-align: center; }
+.fl-meta {
+  display: flex; gap: 12px; font-size: 12px; color: var(--dim);
+  margin-top: 4px; justify-content: center;
+}
+.fl-countdown {
+  font-size: 18px; color: var(--primary); font-weight: 600;
+  text-align: center; margin: 12px 0 4px;
+}
+.fl-countdown.urgent { color: var(--accent); animation: pulse 1s infinite; }
+.fl-countdown.fl-landing { color: #6bff6b; }
+
+.fl-actions {
+  display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px;
+}
+.fl-track {
+  flex: 1; text-align: center; font-size: 12px; padding: 8px 10px;
+  min-width: 0; white-space: nowrap;
+}
+
+.fl-notes {
+  font-size: 13px; color: var(--muted); line-height: 1.5;
+  margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border);
+}
+.fl-empty { color: var(--dim); font-size: 14px; text-align: center; padding: 40px 0; }
+
+/* ===== LIVE WEATHER ===== */
+.wx-section-title {
+  font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;
+  color: var(--muted); margin: 20px 0 10px; font-weight: 600;
+}
+.wx-section-title:first-child { margin-top: 0; }
+
+.wx-live-card {
+  background: var(--surface); border-radius: var(--radius);
+  padding: 14px; margin-bottom: 8px;
+  border-left: 3px solid var(--primary);
+}
+.wx-live-header {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 8px;
+}
+.wx-live-icon { font-size: 28px; }
+.wx-live-name { font-weight: 600; font-size: 15px; }
+.wx-live-desc { font-size: 13px; color: var(--muted); }
+.wx-live-temp {
+  font-size: 42px; font-weight: 300; margin: 4px 0;
+  font-variant-numeric: tabular-nums;
+}
+.wx-live-details {
+  display: flex; flex-wrap: wrap; gap: 12px;
+  font-size: 12px; color: var(--muted);
+}
+
+.wx-forecast-block { margin-bottom: 16px; }
+.wx-forecast-name { font-weight: 600; font-size: 14px; margin-bottom: 8px; }
+.wx-forecast-grid {
+  display: flex; gap: 4px; overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 4px;
+}
+.wx-forecast-day {
+  flex: 0 0 auto; min-width: 64px;
+  background: var(--surface); border-radius: 8px;
+  padding: 8px 6px; text-align: center;
+}
+.wx-forecast-day.today { border: 1px solid var(--primary); }
+.wx-fc-date { font-size: 11px; color: var(--muted); margin-bottom: 4px; white-space: nowrap; }
+.wx-fc-icon { font-size: 20px; margin-bottom: 4px; }
+.wx-fc-temps { display: flex; gap: 4px; justify-content: center; font-size: 13px; font-weight: 600; }
+.wx-fc-temps .hi { color: var(--text); }
+.wx-fc-temps .lo { color: #8ab4ff; }
+.wx-fc-precip { font-size: 10px; color: #8ab4ff; margin-top: 2px; }
+
+.wx-updated {
+  font-size: 11px; color: var(--dim); text-align: center;
+  margin: 12px 0 4px;
+}

@@ -319,6 +319,33 @@
       { "name": "Anca", "phone": "TODO" }
     ]
   },
+  "flights": {
+    "w4-3551": {
+      "flightNumber": "W4 3551",
+      "airline": "Wizz Air",
+      "aircraft": "Airbus A320neo",
+      "duration": "1h 50m",
+      "passenger": { "en": "Anca", "ro": "Anca" },
+      "from": { "code": "TSR", "city": { "en": "Timișoara", "ro": "Timișoara" } },
+      "to": { "code": "BGY", "city": { "en": "Bergamo", "ro": "Bergamo" } },
+      "tracking": {
+        "fr24": "https://www.flightradar24.com/data/flights/w43551",
+        "flightaware": "https://www.flightaware.com/live/flight/WZZ3551"
+      }
+    },
+    "glen-stansted": {
+      "flightNumber": null,
+      "airline": "Ryanair",
+      "aircraft": null,
+      "duration": null,
+      "passenger": { "en": "Glen", "ro": "Glen" },
+      "from": { "code": null, "city": { "en": "TBD", "ro": "De stabilit" } },
+      "to": { "code": "BGY", "city": { "en": "Bergamo", "ro": "Bergamo" } },
+      "tracking": {
+        "ryanair": "https://www.ryanair.com"
+      }
+    }
+  },
   "walletItems": [
     { "id": "ryanair-glen", "stepId": "glen-stansted", "label": { "en": "Ryanair — Glen", "ro": "Ryanair — Glen" } },
     { "id": "w4-3551", "stepId": "w4-3551", "label": { "en": "Wizz Air W4 3551 — Anca", "ro": "Wizz Air W4 3551 — Anca" } },

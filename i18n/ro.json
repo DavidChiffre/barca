@@ -4,6 +4,7 @@
     "timeline": "Program",
     "map": "Harta",
     "wallet": "Portofel",
+    "flights": "Zboruri",
     "weather": "Vremea"
   },
   "now": {
@@ -58,6 +59,14 @@
     "accommodation": "Cazare",
     "contacts": "Contacte"
   },
+  "flights": {
+    "upcoming": "Urmator",
+    "inFlight": "In zbor",
+    "landed": "Aterizat",
+    "landing": "Aterizare in {time}",
+    "searchFlights": "Cauta zboruri",
+    "noFlights": "Niciun zbor in aceasta calatorie."
+  },
   "weather": {
     "title": "Vremea",
     "high": "Maxima",
@@ -68,6 +77,11 @@
     "forecast": "Prognoza live (Météo-France)",
     "sources": "Surse",
     "sunrise": "Rasarit",
-    "sunset": "Apus"
+    "sunset": "Apus",
+    "liveNow": "Acum",
+    "tripForecast": "Prognoza calatoriei",
+    "averages": "Medii istorice",
+    "feelsLike": "Se simte ca",
+    "lastUpdated": "Actualizat la"
   }
 }

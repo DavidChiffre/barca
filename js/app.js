@@ -5,6 +5,7 @@ import { initTimeline } from './timeline.js';
 import { initMap, flyToPlace, downloadTiles } from './map.js';
 import { initWallet, openTicket } from './wallet.js';
 import { initWeather } from './weather.js';
+import { initFlights } from './flights.js';
 import { showChecklist } from './checklist.js';
 import { scheduleAll } from './alerts.js';
 
@@ -62,6 +63,7 @@ function refreshTab(tab) {
   if (tab === 'timeline') initTimeline(el);
   if (tab === 'map') { initMap(el); mapInited = true; }
   if (tab === 'wallet') initWallet(el);
+  if (tab === 'flights') initFlights(el);
   if (tab === 'weather') initWeather(el);
 }
 
