@@ -70,6 +70,12 @@ export function flyToPlace(placeId) {
   }
 }
 
+export function flyToCoords(lat, lng) {
+  if (map) {
+    map.flyTo([lat, lng], 15, { duration: 0.8 });
+  }
+}
+
 export function downloadTiles(onProgress) {
   if (!navigator.serviceWorker?.controller) { onProgress(1, 1); return; }
   const tiles = [];

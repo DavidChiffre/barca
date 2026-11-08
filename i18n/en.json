@@ -46,9 +46,13 @@
   },
   "menu": {
     "phrases": "Useful phrases",
+    "photos": "Photo spots",
     "emergency": "Emergency info",
     "language": "Limba romana",
     "checklist": "Checklist"
+  },
+  "photos": {
+    "title": "Photo spots"
   },
   "phrases": {
     "title": "Useful phrases"

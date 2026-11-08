@@ -46,9 +46,13 @@
   },
   "menu": {
     "phrases": "Expresii utile",
+    "photos": "Locuri de fotografiat",
     "emergency": "Urgenta",
     "language": "English",
     "checklist": "Lista de verificare"
+  },
+  "photos": {
+    "title": "Locuri de fotografiat"
   },
   "phrases": {
     "title": "Expresii utile"

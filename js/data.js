@@ -18,3 +18,4 @@ export function getWalletItems() { return tripData?.walletItems || []; }
 export function getPhrases() { return tripData?.phrases || []; }
 export function getEmergency() { return tripData?.emergency || {}; }
 export function getFlights() { return tripData?.flights || {}; }
+export function getPhotoSpots() { return tripData?.photoSpots || []; }

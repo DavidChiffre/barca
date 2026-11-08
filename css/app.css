@@ -305,6 +305,14 @@ main {
 .phrase-foreign { font-weight: 600; font-size: 15px; }
 .phrase-meaning { font-size: 13px; color: var(--muted); margin-top: 2px; }
 
+/* Photo spots */
+.photo-spot {
+  background: var(--raised); padding: 12px; border-radius: var(--radius);
+  margin-bottom: 8px;
+}
+.photo-spot-name { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
+.photo-spot-tip { font-size: 13px; color: var(--muted); line-height: 1.5; margin-bottom: 8px; }
+
 /* Emergency */
 .emergency-call {
   display: block; background: var(--accent); color: #fff;
