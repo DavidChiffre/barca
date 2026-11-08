@@ -46,13 +46,13 @@
   },
   "menu": {
     "phrases": "Expresii utile",
-    "photos": "Locuri de fotografiat",
+    "places": "Locuri de vizitat",
     "emergency": "Urgenta",
     "language": "English",
     "checklist": "Lista de verificare"
   },
-  "photos": {
-    "title": "Locuri de fotografiat"
+  "places": {
+    "title": "Locuri de vizitat"
   },
   "phrases": {
     "title": "Expresii utile"
@@ -70,6 +70,13 @@
     "landing": "Aterizare in {time}",
     "searchFlights": "Cauta zboruri",
     "noFlights": "Niciun zbor in aceasta calatorie."
+  },
+  "pins": {
+    "add": "Adaugă loc foto",
+    "tapToPlace": "Atinge harta pentru a pune un pin",
+    "namePrompt": "Numele locului foto:",
+    "photoSpot": "Loc foto",
+    "remove": "Sterge pin"
   },
   "weather": {
     "title": "Vremea",

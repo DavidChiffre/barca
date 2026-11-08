@@ -103,6 +103,18 @@
       "name": { "en": "Chamonix Sud coach station", "ro": "Gara autocar Chamonix Sud" },
       "lat": 45.9200, "lng": 6.8680,
       "note": { "en": "Return coaches to Bergamo", "ro": "Autocarele de retur spre Bergamo" }
+    },
+    {
+      "id": "brevent",
+      "name": { "en": "Brévent cable car", "ro": "Telecabina Brévent" },
+      "lat": 45.9283, "lng": 6.8408,
+      "note": { "en": "Panoramic view of the Mont Blanc massif. Weather-dependent.", "ro": "Vedere panoramică asupra masivului Mont Blanc. Depinde de vreme." }
+    },
+    {
+      "id": "tramway-mb",
+      "name": { "en": "Tramway du Mont Blanc", "ro": "Tramvaiul Mont Blanc" },
+      "lat": 45.8920, "lng": 6.8050,
+      "note": { "en": "Rack railway to Bellevue at 1,800 m", "ro": "Cale ferată cu cremalieră spre Bellevue la 1.800 m" }
     }
   ],
   "steps": [
@@ -307,28 +319,26 @@
       ]
     }
   ],
-  "photoSpots": [
+  "placesToVisit": [
     {
       "name": { "en": "Chamonix town centre", "ro": "Centrul orașului Chamonix" },
       "tip": { "en": "Rue du Docteur Paccard and Place Balmat with Mont Blanc behind. Best light in the morning.", "ro": "Rue du Docteur Paccard și Place Balmat cu Mont Blanc în spate. Lumină optimă dimineața." },
-      "placeId": "chamonix-gare",
-      "lat": 45.9237, "lng": 6.8694
+      "placeId": "chamonix-gare"
     },
     {
       "name": { "en": "Brévent cable car", "ro": "Telecabina Brévent" },
       "tip": { "en": "Panoramic view of the entire Mont Blanc massif. Weather-dependent — check visibility before going up.", "ro": "Vedere panoramică asupra întregului masiv Mont Blanc. Depinde de vreme — verificați vizibilitatea înainte de urcare." },
-      "lat": 45.9283, "lng": 6.8408
+      "placeId": "brevent"
     },
     {
       "name": { "en": "Aiguille du Midi", "ro": "Aiguille du Midi" },
       "tip": { "en": "3,842 m summit terrace. The Step into the Void glass box if it is open. Wrap up warm — wind chill is brutal.", "ro": "Terasa de la 3.842 m. Cabina de sticlă Step into the Void dacă e deschisă. Îmbrăcați-vă gros — frigul e brutal." },
-      "placeId": "aiguille-du-midi",
-      "lat": 45.8785, "lng": 6.8873
+      "placeId": "aiguille-du-midi"
     },
     {
       "name": { "en": "Tramway du Mont Blanc", "ro": "Tramvaiul Mont Blanc" },
-      "tip": { "en": "Rack railway to Bellevue at 1,800 m. Photograph the train against the snowy valley from the platform or from Bellevue itself.", "ro": "Cale ferată cu cremaliieră spre Bellevue la 1.800 m. Fotografiați trenul pe fondul văii înzăpezite de pe peron sau de la Bellevue." },
-      "lat": 45.8920, "lng": 6.8050
+      "tip": { "en": "Rack railway to Bellevue at 1,800 m. Photograph the train against the snowy valley from the platform or from Bellevue itself.", "ro": "Cale ferată cu cremalieră spre Bellevue la 1.800 m. Fotografiați trenul pe fondul văii înzăpezite de pe peron sau de la Bellevue." },
+      "placeId": "tramway-mb"
     }
   ],
   "emergency": {

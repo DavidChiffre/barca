@@ -1,8 +1,11 @@
 import { getPlaces, getSteps, getTrip } from './data.js';
-import { localized } from './i18n.js';
+import { localized, t } from './i18n.js';
 import { stepDepart, stepArrive, stepStatus, fmtTime } from './time.js';
 
 let map = null, markers = {};
+let pinMode = false, pinMarkers = [];
+
+const PINS_KEY = 'barca-photo-pins';
 
 const ROUTE_COORDS = [
   [45.6690, 9.7004],   // Bergamo
@@ -13,6 +16,44 @@ const ROUTE_COORDS = [
   [45.9237, 6.8694],   // Chamonix
   [45.8906, 6.7982]    // Les Houches
 ];
+
+function loadPins() {
+  try {
+    return JSON.parse(localStorage.getItem(PINS_KEY)) || [];
+  } catch { return []; }
+}
+
+function savePins(pins) {
+  try { localStorage.setItem(PINS_KEY, JSON.stringify(pins)); } catch {}
+}
+
+function cameraIcon() {
+  return L.divIcon({
+    className: 'photo-pin-icon',
+    html: '📸',
+    iconSize: [28, 28],
+    iconAnchor: [14, 14],
+    popupAnchor: [0, -16]
+  });
+}
+
+function addPinToMap(pin) {
+  const m = L.marker([pin.lat, pin.lng], { icon: cameraIcon() }).addTo(map);
+  const popup = `
+    <strong>${pin.name}</strong>
+    <br><small style="color:#888">${t('pins.photoSpot')}</small>
+    <br><button class="pin-delete" onclick="window.dispatchEvent(new CustomEvent('barca-delete-pin',{detail:'${pin.id}'}))">${t('pins.remove')}</button>
+  `;
+  m.bindPopup(popup);
+  m._pinId = pin.id;
+  pinMarkers.push(m);
+}
+
+function renderPins() {
+  for (const m of pinMarkers) map.removeLayer(m);
+  pinMarkers = [];
+  for (const pin of loadPins()) addPinToMap(pin);
+}
 
 export function initMap(el) {
   if (map) { map.invalidateSize(); return; }
@@ -45,6 +86,59 @@ export function initMap(el) {
     m.bindPopup(popup);
     markers[place.id] = m;
   }
+
+  renderPins();
+
+  // FAB for adding photo pins
+  const fab = L.DomUtil.create('button', 'map-fab');
+  fab.innerHTML = '📸';
+  fab.title = t('pins.add');
+  fab.setAttribute('aria-label', t('pins.add'));
+  el.appendChild(fab);
+
+  const toast = L.DomUtil.create('div', 'map-toast hidden');
+  toast.textContent = t('pins.tapToPlace');
+  el.appendChild(toast);
+
+  L.DomEvent.disableClickPropagation(fab);
+  fab.addEventListener('click', () => {
+    pinMode = !pinMode;
+    fab.classList.toggle('active', pinMode);
+    toast.classList.toggle('hidden', !pinMode);
+    el.classList.toggle('pin-mode', pinMode);
+  });
+
+  map.on('click', e => {
+    if (!pinMode) return;
+    const { lat, lng } = e.latlng;
+    const name = prompt(t('pins.namePrompt'));
+    if (!name) return;
+
+    const pin = {
+      id: Date.now().toString(36),
+      lat: Math.round(lat * 1e6) / 1e6,
+      lng: Math.round(lng * 1e6) / 1e6,
+      name
+    };
+    const pins = loadPins();
+    pins.push(pin);
+    savePins(pins);
+    addPinToMap(pin);
+
+    pinMode = false;
+    fab.classList.remove('active');
+    toast.classList.add('hidden');
+    el.classList.remove('pin-mode');
+  });
+
+  window.addEventListener('barca-delete-pin', e => {
+    const id = e.detail;
+    const pins = loadPins().filter(p => p.id !== id);
+    savePins(pins);
+    const m = pinMarkers.find(m => m._pinId === id);
+    if (m) { map.removeLayer(m); pinMarkers = pinMarkers.filter(x => x !== m); }
+    map.closePopup();
+  });
 
   if ('geolocation' in navigator) {
     navigator.geolocation.watchPosition(pos => {

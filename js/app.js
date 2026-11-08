@@ -76,7 +76,7 @@ function setupMenu() {
     const action = e.target.closest('[data-menu]')?.dataset.menu;
     if (action === 'checklist') showChecklist();
     if (action === 'phrases') showPhrases();
-    if (action === 'photos') showPhotoSpots();
+    if (action === 'places') showPlacesToVisit();
     if (action === 'emergency') showEmergency();
     if (action === 'lang') toggleLang();
     if (action) drawer.classList.add('hidden');
@@ -95,7 +95,7 @@ function updateLabels() {
   });
   document.querySelector('[data-menu="checklist"]').textContent = t('menu.checklist');
   document.querySelector('[data-menu="phrases"]').textContent = t('menu.phrases');
-  document.querySelector('[data-menu="photos"]').textContent = t('menu.photos');
+  document.querySelector('[data-menu="places"]').textContent = t('menu.places');
   document.querySelector('[data-menu="emergency"]').textContent = t('menu.emergency');
   document.querySelector('[data-menu="lang"]').textContent = t('menu.language');
 
@@ -122,19 +122,17 @@ function showPhrases() {
   });
 }
 
-function showPhotoSpots() {
-  import('./data.js').then(({ getPhotoSpots }) => {
-    const spots = getPhotoSpots();
+function showPlacesToVisit() {
+  import('./data.js').then(({ getPlacesToVisit }) => {
+    const spots = getPlacesToVisit();
     const overlay = document.getElementById('detail-overlay');
-    let html = `<div class="detail-sheet"><button class="detail-close">✕</button><h2>${t('photos.title')}</h2>`;
+    let html = `<div class="detail-sheet"><button class="detail-close">✕</button><h2>${t('places.title')}</h2>`;
     for (const spot of spots) {
       html += `
         <div class="photo-spot">
-          <div class="photo-spot-name">📸 ${localized(spot.name)}</div>
+          <div class="photo-spot-name">📍 ${localized(spot.name)}</div>
           <div class="photo-spot-tip">${localized(spot.tip)}</div>
-          <button class="btn-sm" data-action="map-spot" data-lat="${spot.lat}" data-lng="${spot.lng}">
-            ${t('now.showOnMap')}
-          </button>
+          ${spot.placeId ? `<button class="btn-sm" data-action="map-spot" data-place="${spot.placeId}">${t('now.showOnMap')}</button>` : ''}
         </div>`;
     }
     html += '</div>';
@@ -145,12 +143,7 @@ function showPhotoSpots() {
     overlay.querySelectorAll('[data-action="map-spot"]').forEach(btn => {
       btn.addEventListener('click', () => {
         overlay.classList.add('hidden');
-        const lat = parseFloat(btn.dataset.lat);
-        const lng = parseFloat(btn.dataset.lng);
-        window.dispatchEvent(new CustomEvent('barca-nav', { detail: { tab: 'map', place: null } }));
-        setTimeout(() => {
-          import('./map.js').then(({ flyToCoords }) => flyToCoords(lat, lng));
-        }, 400);
+        window.dispatchEvent(new CustomEvent('barca-nav', { detail: { tab: 'map', place: btn.dataset.place } }));
       });
     });
   });

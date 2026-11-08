@@ -563,3 +563,41 @@ h2 .editable, .now-title.editable { display: block; border-bottom-style: dashed;
   font-size: 11px; color: var(--dim); text-align: center;
   margin: 12px 0 4px;
 }
+
+/* ===== PHOTO PINS ===== */
+.map-fab {
+  position: absolute; bottom: 24px; left: 16px; z-index: 150;
+  width: 48px; height: 48px; border-radius: 50%;
+  background: var(--raised); border: 2px solid var(--border);
+  font-size: 22px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: background 0.2s, border-color 0.2s;
+}
+.map-fab:active { opacity: 0.8; }
+.map-fab.active {
+  background: var(--primary); border-color: var(--primary);
+}
+.map-toast {
+  position: absolute; top: 12px; left: 50%; z-index: 150;
+  transform: translateX(-50%);
+  background: var(--raised); color: var(--text);
+  padding: 8px 16px; border-radius: 20px;
+  font-size: 13px; font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  pointer-events: none; white-space: nowrap;
+  transition: opacity 0.2s;
+}
+.map-toast.hidden { opacity: 0; pointer-events: none; }
+.pin-mode .leaflet-container { cursor: crosshair !important; }
+.photo-pin-icon {
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+.pin-delete {
+  display: inline-block; margin-top: 6px;
+  background: var(--raised); border: 1px solid var(--accent);
+  color: var(--accent); padding: 4px 10px; border-radius: 6px;
+  font-size: 12px; cursor: pointer;
+}
+.pin-delete:active { opacity: 0.7; }

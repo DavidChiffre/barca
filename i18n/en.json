@@ -46,13 +46,13 @@
   },
   "menu": {
     "phrases": "Useful phrases",
-    "photos": "Photo spots",
+    "places": "Places to visit",
     "emergency": "Emergency info",
     "language": "Limba romana",
     "checklist": "Checklist"
   },
-  "photos": {
-    "title": "Photo spots"
+  "places": {
+    "title": "Places to visit"
   },
   "phrases": {
     "title": "Useful phrases"
@@ -70,6 +70,13 @@
     "landing": "Landing in {time}",
     "searchFlights": "Search flights",
     "noFlights": "No flights in this trip."
+  },
+  "pins": {
+    "add": "Add photo spot",
+    "tapToPlace": "Tap the map to drop a pin",
+    "namePrompt": "Name this photo spot:",
+    "photoSpot": "Photo spot",
+    "remove": "Remove pin"
   },
   "weather": {
     "title": "Weather",
