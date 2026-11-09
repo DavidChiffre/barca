@@ -1,4 +1,4 @@
-const CACHE = 'barca-v14';
+const CACHE = 'barca-v15';
 const TILES = 'barca-tiles-v1';
 const SHELL = [
   './',
