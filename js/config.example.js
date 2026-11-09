@@ -1,6 +1,7 @@
-// Copy this file to js/config.js (which is gitignored) and fill in your
-// Supabase project details. js/config.js is loaded by index.html before the
-// app bundle; without it, cross-device sync stays disabled.
+// Template for js/config.js (committed — the anon key is public by design,
+// RLS is the security boundary). Fill in your Supabase project details;
+// js/config.js is loaded by index.html before the app bundle, and sync
+// stays disabled while the placeholders are in place.
 //
 // In Supabase (SQL editor), create the shared table once:
 //

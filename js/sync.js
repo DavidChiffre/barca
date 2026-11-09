@@ -106,7 +106,7 @@ async function pull() {
 
 export function initSync() {
   cfg = window.BARCA_CONFIG || null;
-  if (!cfg || !cfg.url || !cfg.anonKey) return;
+  if (!cfg || !cfg.url || !cfg.anonKey || cfg.url.includes('YOUR-PROJECT') || cfg.anonKey.includes('YOUR-ANON-KEY')) return;
   getDeviceId();
   loadMeta();
   pull();
