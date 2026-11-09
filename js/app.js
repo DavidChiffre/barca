@@ -1,4 +1,5 @@
 import { loadTrip } from './data.js';
+import { initSync } from './sync.js';
 import { initI18n, setLang, getLang, onLangChange, t } from './i18n.js';
 import { initNow, goToStep } from './now.js';
 import { initTimeline } from './timeline.js';
@@ -26,6 +27,13 @@ async function boot() {
     if (place) setTimeout(() => flyToPlace(place), 300);
     if (ticket) setTimeout(() => openTicket(ticket), 100);
   });
+
+  window.addEventListener('barca:remote', e => {
+    const key = e.detail && e.detail.key;
+    if (key === 'barca-edits' || key === 'barca-day-order') switchTab(currentTab, true);
+  });
+
+  initSync();
 
   scheduleAll();
 

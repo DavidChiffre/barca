@@ -1,4 +1,4 @@
-const CACHE = 'barca-v12';
+const CACHE = 'barca-v14';
 const TILES = 'barca-tiles-v1';
 const SHELL = [
   './',
@@ -17,6 +17,7 @@ const SHELL = [
   './js/edits.js',
   './js/checklist.js',
   './js/alerts.js',
+  './js/sync.js',
   './i18n/en.json',
   './i18n/ro.json',
   './data/trip.json',
@@ -59,7 +60,7 @@ self.addEventListener('fetch', e => {
     return;
   }
 
-  if (url.hostname === 'api.open-meteo.com') {
+  if (url.hostname === 'api.open-meteo.com' || url.hostname.endsWith('supabase.co')) {
     e.respondWith(fetch(e.request).catch(() => caches.match(e.request)));
     return;
   }
