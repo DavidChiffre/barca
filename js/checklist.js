@@ -37,6 +37,12 @@ function load() {
 }
 function save(state) { localStorage.setItem(KEY, JSON.stringify(state)); }
 
+window.addEventListener('barca:remote', e => {
+  if (!e.detail || e.detail.key !== KEY) return;
+  const overlay = document.getElementById('detail-overlay');
+  if (overlay && !overlay.classList.contains('hidden') && overlay.querySelector('.checklist-sheet')) showChecklist();
+});
+
 function getItems() {
   const state = load();
   const custom = state._custom || [];

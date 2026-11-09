@@ -89,6 +89,10 @@ export function initMap(el) {
 
   renderPins();
 
+  window.addEventListener('barca:remote', e => {
+    if (e.detail && e.detail.key === PINS_KEY && map) renderPins();
+  });
+
   // FAB for adding photo pins
   const fab = L.DomUtil.create('button', 'map-fab');
   fab.innerHTML = '📸';
