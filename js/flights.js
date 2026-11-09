@@ -1,6 +1,7 @@
 import { getSteps, getFlights, getPlace, getTrip } from './data.js';
 import { t, localized } from './i18n.js';
 import { stepDepart, stepArrive, formatCountdown, fmtTime, fmtDate } from './time.js';
+import { editableField } from './edits.js';
 
 let timer = null;
 
@@ -47,25 +48,19 @@ function render(el) {
       countdown = `<div class="fl-countdown fl-landing" data-ref="${arr.getTime()}">${t('flights.landing').replace('{time}', cd.text)}</div>`;
     }
 
-    const fromCode = fl.from?.code;
-    const toCode = fl.to?.code;
-    const fromCity = localized(fl.from?.city) || '';
-    const toCity = localized(fl.to?.city) || '';
-    const passenger = localized(fl.passenger) || '';
-
     html += `
-      <div class="fl-card${status === 'in-flight' ? ' fl-live' : ''}">
+      <div class="fl-card${status === 'in-flight' ? ' fl-live' : ''}" data-step="${step.id}">
         <div class="fl-header">
-          <div class="fl-airline">${fl.airline || localized(step.title)}</div>
+          <div class="fl-airline" data-flight-edit="airline" data-step="${step.id}"></div>
           <span class="fl-badge ${statusClass}">${statusLabel}</span>
         </div>
-        ${fl.flightNumber ? `<div class="fl-number">${fl.flightNumber}</div>` : ''}
-        ${passenger ? `<div class="fl-passenger">${passenger}</div>` : ''}
+        <div class="fl-number" data-flight-edit="flightNumber" data-step="${step.id}"></div>
+        <div class="fl-passenger" data-flight-edit="passenger" data-step="${step.id}"></div>
 
         <div class="fl-route">
           <div class="fl-airport">
-            <span class="fl-code">${fromCode || '?'}</span>
-            <span class="fl-city">${fromCity}</span>
+            <span class="fl-code" data-flight-edit="fromCode" data-step="${step.id}"></span>
+            <span class="fl-city" data-flight-edit="fromCity" data-step="${step.id}"></span>
             <span class="fl-time">${depTime}${step.departTz !== tz ? ` <small>${depTzLabel}</small>` : ''}</span>
           </div>
           <div class="fl-arrow">
@@ -74,19 +69,18 @@ function render(el) {
             <span class="fl-line"></span>
           </div>
           <div class="fl-airport">
-            <span class="fl-code">${toCode || '?'}</span>
-            <span class="fl-city">${toCity}</span>
+            <span class="fl-code" data-flight-edit="toCode" data-step="${step.id}"></span>
+            <span class="fl-city" data-flight-edit="toCity" data-step="${step.id}"></span>
             <span class="fl-time">${arrTime} <small>${arrTzLabel}</small></span>
           </div>
         </div>
 
         <div class="fl-date">${fmtDate(step.day)}</div>
 
-        ${fl.aircraft || fl.duration ? `
-          <div class="fl-meta">
-            ${fl.aircraft ? `<span>${fl.aircraft}</span>` : ''}
-            ${fl.duration ? `<span>${fl.duration}</span>` : ''}
-          </div>` : ''}
+        <div class="fl-meta">
+          <span data-flight-edit="aircraft" data-step="${step.id}"></span>
+          <span data-flight-edit="duration" data-step="${step.id}"></span>
+        </div>
 
         ${countdown}
 
@@ -106,6 +100,33 @@ function render(el) {
   }
 
   el.innerHTML = html;
+
+  el.querySelectorAll('[data-flight-edit]').forEach(ph => {
+    const field = ph.dataset.flightEdit;
+    const sid = ph.dataset.step;
+    const step = steps.find(s => s.id === sid);
+    const src = flightFieldSource(flights[sid] || {}, step, field);
+    const original = typeof src === 'string' ? src : localized(src);
+    ph.replaceWith(editableField(`flight.${sid}.${field}`, original, {
+      tag: ph.tagName.toLowerCase(),
+      cls: ph.className
+    }));
+  });
+}
+
+function flightFieldSource(fl, step, field) {
+  switch (field) {
+    case 'airline': return fl.airline || localized(step?.title);
+    case 'flightNumber': return fl.flightNumber || '';
+    case 'passenger': return fl.passenger || '';
+    case 'fromCode': return fl.from?.code || '';
+    case 'fromCity': return fl.from?.city || '';
+    case 'toCode': return fl.to?.code || '';
+    case 'toCity': return fl.to?.city || '';
+    case 'aircraft': return fl.aircraft || '';
+    case 'duration': return fl.duration || '';
+    default: return '';
+  }
 }
 
 function updateCountdowns(el) {
